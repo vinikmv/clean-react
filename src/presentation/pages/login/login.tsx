@@ -1,13 +1,13 @@
 import React from 'react'
 import Styles from './login-styles.scss'
-import Spinner from '../../components/spinner/spinner'
-import { logo } from '../../components/logo/logo'
+import Spinner from '@/presentation/components/spinner/spinner'
+import Logo from '@/presentation/components/logo/logo'
 
 const Login: React.FC = () => {
   return (
     <div className={Styles.login}>
       <header className={Styles.header}>
-        <img src={logo} alt="Logo"/>
+        <Logo />
         <h1>Enquetes para todos</h1>
       </header>
       <form className={Styles.form}>
