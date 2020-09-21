@@ -11,8 +11,8 @@
     "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Vinicius",
+  "license": "GNU GPL3",
   "devDependencies": {
     "@testing-library/react": "^11.0.2",
     "@types/axios": "^0.14.0",
