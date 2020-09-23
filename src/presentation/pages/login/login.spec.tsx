@@ -165,6 +165,15 @@ describe('Login Component', () => {
   })
 
   test('Should call SaveAccessToken on success', async () => {
+    const { sut, saveAccessTokenMock } = makeSut()
+    const error = new InvalidCredentialsError()
+    jest.spyOn(saveAccessTokenMock, 'save').mockReturnValueOnce(Promise.reject(error))
+    await simulateValidSubmit(sut)
+    testElementText(sut, 'main-error', error.message)
+    testErrorWrapChildCount(sut, 1)
+  })
+
+  test('Should present error if SaveAccessToken fails', async () => {
     const { sut, authenticationSpy, saveAccessTokenMock } = makeSut()
     await simulateValidSubmit(sut)
     expect(saveAccessTokenMock.accessToken).toBe(authenticationSpy.account.accessToken)
